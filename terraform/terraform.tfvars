@@ -1,0 +1,6 @@
+aws_region = "eu-central-1"
+jenkins_docker_image = "jenkins/jenkins:2.440.2-lts-jdk17"
+subnet_id = "subnet-0f38394169066d9b9"
+security_group_id = "sg-03101bcafa58f90a2"
+aws_access_key_id = ""
+aws_secret_access_key = ""

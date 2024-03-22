@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - echo "Starting pre-build phase"
+      - echo "Pulling Docker image for Jenkins"
+      - docker pull jenkins_docker_image:latest
+  build:
+    commands:
+      - echo "Starting build phase"
+      - echo "Build commands for Jenkins integration"
+      - # Add your build commands here
+  post_build:
+    commands:
+      - echo "Starting post-build phase"
+      - echo "Post-build cleanup"
