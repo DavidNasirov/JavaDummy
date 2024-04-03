@@ -11,9 +11,9 @@ resource "aws_ecs_task_definition" "jenkins_task" {
   container_definitions    = jsonencode([
     {
       name                    = "jenkins-container"
-      image                   = var.jenkins_docker_image.tag
-      cpu                     = 512
-      memory                  = 1024
+      image                   = var.jenkins_docker_image
+      cpu                     = 256
+      memory                  = 512
       essential               = true
       portMappings = [
         {
