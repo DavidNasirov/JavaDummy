@@ -8,6 +8,7 @@ resource "aws_ecs_cluster" "jenkins_cluster" {
 
 resource "aws_ecs_task_definition" "jenkins_task" {
   family                   = "jenkins-task"
+  network_mode             = "awsvpc"
   container_definitions    = jsonencode([
     {
       name                    = "jenkins-container"
@@ -53,7 +54,7 @@ resource "aws_ecs_service" "jenkins_service" {
   network_configuration {
     subnets         = [var.subnet_id]
     security_groups = [var.security_group_id]
-    assign_public_ip = true
+    assign_public_ip = false
   }
 }
 
